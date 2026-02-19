@@ -17,7 +17,7 @@ It handles:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - Python 3.10+
 - FastAPI
@@ -28,36 +28,37 @@ It handles:
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 The backend follows a layered architecture:
 
 
 ---
 
-## 🚀 Features
+## Features
 
-### 1️⃣ Sentiment Analysis
+### 1 Sentiment Analysis
 - Processes product reviews
 - Classifies sentiment (positive / negative / neutral)
 - Stores sentiment score in MongoDB
 
-### 2️⃣ Trend Analysis
+### 2️ Trend Analysis
 - Aggregates product-level sentiment
 - Detects trending products using MongoDB aggregation pipeline
 
-### 3️⃣ Alert Detection
+### 3️ Alert Detection
 - Triggers alerts when negative sentiment crosses threshold
 - Scheduled background monitoring
 
-### 4️⃣ RAG Module
+### 4️ RAG Module
 - Uses LLM (via Ollama/OpenAI) for contextual query answering
 - Retrieves relevant stored data before generating response
 
-### 5️⃣ Scheduled Reports
+### 5️ Scheduled Reports
 - Automatic report generation using scheduler
 
 ---
+
 
 
 
