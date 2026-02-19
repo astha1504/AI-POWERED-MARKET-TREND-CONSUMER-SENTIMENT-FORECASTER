@@ -51,13 +51,14 @@ The backend follows a layered architecture:
 - Scheduled background monitoring
 
 ### 4️ RAG Module
-- Uses LLM (via Ollama/OpenAI) for contextual query answering
+- Uses LLM for contextual query answering
 - Retrieves relevant stored data before generating response
 
 ### 5️ Scheduled Reports
 - Automatic report generation using scheduler
 
 ---
+
 
 
 
