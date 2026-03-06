@@ -28,3 +28,18 @@ dist
 .env
 __pycache__/
 *.pyc
+# Python
+venv/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
