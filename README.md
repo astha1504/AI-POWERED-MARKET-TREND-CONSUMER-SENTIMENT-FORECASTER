@@ -17,19 +17,6 @@ This branch contains the Artificial Intelligence components used to analyze prod
 - Sentiment Analysis
 - Topic Modelling
 
-## Files
-
-- `sentiment_analysis.py` – Generates sentiment scores and labels  
-- `topic_modelling.py` – Extracts topics from reviews  
-- `validate_accuracy.py` – Calculates sentiment prediction accuracy  
-- `push_to_db.py` – Pushes processed data to the database  
-
-## Data Files
-
-- `clean_reviews.csv` – Preprocessed reviews  
-- `reviews_with_sentiment.csv` – Reviews with sentiment scores  
-- `reviews_with_topics.csv` – Reviews with extracted topics  
-- `reviews_final.csv` – Final dataset with sentiment, topics, and accuracy  
 
 ## Accuracy Validation
 
@@ -40,12 +27,3 @@ Ground truth sentiment is derived from ratings:
 - **1–2 → Negative**
 
 Predicted sentiment is compared with ground truth to calculate the **overall accuracy percentage**.
-
-## Running the AI Pipeline
-
-Run the scripts in order:
-
-```bash
-python AI_services/sentiment_analysis.py
-python AI_services/topic_modelling.py
-python AI_services/validate_accuracy.py
