@@ -14,9 +14,6 @@ This branch contains the Artificial Intelligence components used to analyze prod
 - Python
 - Pandas
 - Natural Language Processing (NLP)
-- Sentiment Analysis
-- Topic Modelling
-
 
 ## Accuracy Validation
 
@@ -27,3 +24,4 @@ Ground truth sentiment is derived from ratings:
 - **1–2 → Negative**
 
 Predicted sentiment is compared with ground truth to calculate the **overall accuracy percentage**.
+
