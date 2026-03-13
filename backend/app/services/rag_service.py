@@ -1,0 +1,8 @@
+# from app.rag.rag_pipeline import ask_question
+
+# def get_rag_answer(query: str):
+#     answer = ask_question(query)
+<<<<<<< HEAD
+#     return {"query": query, "answer": answer}
+=======
+#     return {"query": query, "answer": answer}
