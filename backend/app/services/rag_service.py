@@ -2,7 +2,7 @@
 
 # def get_rag_answer(query: str):
 #     answer = ask_question(query)
-<<<<<<< HEAD
+
 #     return {"query": query, "answer": answer}
-=======
+
 #     return {"query": query, "answer": answer}
