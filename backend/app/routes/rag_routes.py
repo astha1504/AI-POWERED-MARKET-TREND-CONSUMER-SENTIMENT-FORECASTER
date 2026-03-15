@@ -18,37 +18,49 @@
 from fastapi import APIRouter, UploadFile, File
 from pydantic import BaseModel
 from app.services.rag_service import RAGService
+import os
 
 router = APIRouter(prefix="/rag", tags=["RAG"])
 
-rag_service = RAGService()
+rag = RAGService()
 
 
 class QueryRequest(BaseModel):
     query: str
 
 
-@router.post("/upload")
-async def upload_document(file: UploadFile = File(...)):
-    """
-    Upload a document to build the RAG knowledge base
-    """
+@router.post("/upload-text")
+async def upload_text(file: UploadFile = File(...)):
+
     content = await file.read()
     text = content.decode("utf-8")
 
-    rag_service.add_documents(text)
+    rag.add_text(text)
 
-    return {"message": "Document added to knowledge base"}
+    return {"message": "Text document added to RAG"}
+
+
+@router.post("/upload-pdf")
+async def upload_pdf(file: UploadFile = File(...)):
+
+    file_path = f"temp_{file.filename}"
+
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+
+    rag.add_pdf(file_path)
+
+    os.remove(file_path)
+
+    return {"message": "PDF added to RAG"}
 
 
 @router.post("/query")
 def query_rag(request: QueryRequest):
-    """
-    Ask questions from uploaded documents
-    """
-    response = rag_service.query(request.query)
+
+    result = rag.query(request.query)
 
     return {
         "query": request.query,
-        "response": response
+        "context": result
     }
