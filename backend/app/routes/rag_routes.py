@@ -53,14 +53,11 @@ async def upload_pdf(file: UploadFile = File(...)):
     os.remove(file_path)
 
     return {"message": "PDF added to RAG"}
-
-
+    
 @router.post("/query")
 def query_rag(request: QueryRequest):
-
     result = rag.query(request.query)
-
     return {
         "query": request.query,
-        "context": result
+        "answer": result
     }

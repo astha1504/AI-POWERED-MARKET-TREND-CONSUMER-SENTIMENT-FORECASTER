@@ -1,12 +1,4 @@
 import Papa from "papaparse";
-<<<<<<< HEAD
-
-/**
- * Load reviews from public/reviews.csv
- * Returns Promise<Array>
- */
-export const loadReviews = async () => {
-=======
 import api from "./api";
 
 const normalizeReview = (raw) => ({
@@ -17,18 +9,13 @@ const normalizeReview = (raw) => ({
 });
 
 const loadReviewsFromCsv = async () => {
->>>>>>> 29d27de (update code with backend integration)
   return new Promise((resolve, reject) => {
     Papa.parse("/reviews.csv", {
       download: true,
       header: true,
       skipEmptyLines: true,
       complete: (result) => {
-<<<<<<< HEAD
-        resolve(result.data);
-=======
         resolve(result.data.map(normalizeReview));
->>>>>>> 29d27de (update code with backend integration)
       },
       error: (error) => {
         reject(error);
@@ -36,8 +23,6 @@ const loadReviewsFromCsv = async () => {
     });
   });
 };
-<<<<<<< HEAD
-=======
 
 /**
  * Load reviews from backend (/data/reviews).
@@ -61,4 +46,3 @@ export const loadReviews = async () => {
 
   return loadReviewsFromCsv();
 };
->>>>>>> 29d27de (update code with backend integration)

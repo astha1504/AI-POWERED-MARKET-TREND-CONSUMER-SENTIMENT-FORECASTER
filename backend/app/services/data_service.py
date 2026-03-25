@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import pandas as pd
-from app.database import get_collection
-
-def upload_clean_data():
-    df = pd.read_csv("clean_reviews.csv")
-=======
 from pathlib import Path
 
 import pandas as pd
@@ -20,7 +13,6 @@ CLEAN_REVIEWS_PATH = (
 
 def upload_clean_data():
     df = pd.read_csv(CLEAN_REVIEWS_PATH)
->>>>>>> 29d27de (update code with backend integration)
 
     collection = get_collection("cleaned_reviews")
     collection.delete_many({})  # Clear old data
@@ -28,8 +20,6 @@ def upload_clean_data():
     collection.insert_many(df.to_dict("records"))
 
     return {"message": "Clean data uploaded successfully"}
-<<<<<<< HEAD
-=======
 
 
 def get_clean_reviews(limit: int = 0):
@@ -54,4 +44,3 @@ def get_clean_reviews(limit: int = 0):
         return records[:limit]
 
     return records
->>>>>>> 29d27de (update code with backend integration)
